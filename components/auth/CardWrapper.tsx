@@ -8,9 +8,11 @@ import {
 } from "@/components/ui/card";
 import Header from "@/components/auth/Header";
 import Social from "@/components/auth/Social";
+import BackButton from "@/components/auth/BackButton";
 
 interface CardWrapperProps {
     children: React.ReactNode;
+    headerTitle: string;
     headerLabel: string;
     backButtonLabel: string;
     backButtonHref: string;
@@ -19,15 +21,16 @@ interface CardWrapperProps {
 
 const CardWrapper = ({
     children,
+    headerTitle,
     headerLabel,
     backButtonLabel,
     backButtonHref,
     showSocial,
 }: CardWrapperProps) => {
     return (
-        <Card className="max-w-[400px] shadow-md">
+        <Card className="w-full max-w-[400px] shadow-md">
             <CardHeader>
-                <Header label={headerLabel} />
+                <Header title={headerTitle} label={headerLabel} />
             </CardHeader>
             <CardContent>{children}</CardContent>
             {showSocial && (
@@ -35,6 +38,9 @@ const CardWrapper = ({
                     <Social />
                 </CardFooter>
             )}
+            <CardFooter>
+                <BackButton label={backButtonLabel} href={backButtonHref} />
+            </CardFooter>
         </Card>
     );
 };

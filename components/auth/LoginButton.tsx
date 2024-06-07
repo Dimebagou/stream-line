@@ -13,8 +13,6 @@ const LoginButton = ({
     mode = "redirect",
     asChild,
 }: LoginButtonProps) => {
-
-
     const router = useRouter();
 
     const onClick = () => {
@@ -22,11 +20,7 @@ const LoginButton = ({
     };
 
     if (mode === "modal") {
-        return (
-            <span>
-                TODO: Implement modal
-            </span>
-        )
+        return <span>TODO: Implement modal</span>;
     }
 
     return (

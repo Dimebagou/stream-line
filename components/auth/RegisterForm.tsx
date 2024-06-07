@@ -53,7 +53,7 @@ const RegisterForm = () => {
             headerTitle="Inscription"
             headerLabel="Créer votre compte"
             backButtonLabel="Vous avez déjà un compte ?"
-            backButtonHref="/auth/register"
+            backButtonHref="/auth/login"
             showSocial
         >
             <Form {...form}>
@@ -121,9 +121,9 @@ const RegisterForm = () => {
                     <Button
                         disabled={isPending}
                         type="submit"
-                        className="w-full"
+                        className="w-full hover:shadow-md"
                     >
-                        Se connecter
+                        S&apos;inscrire
                     </Button>
                 </form>
             </Form>
